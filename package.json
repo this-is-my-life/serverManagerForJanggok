@@ -1,0 +1,24 @@
+{
+  "name": "proj-servermanager",
+  "version": "1.0.0",
+  "description": "장곡중학교 학습자료서버 관리 프로그램 (Personal Project)",
+  "main": "SMFJ.js",
+  "scripts": {
+    "test": "electron .",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PMHStudio/serverManagerForJanggok.git"
+  },
+  "author": "PMH Studio / PMH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PMHStudio/serverManagerForJanggok/issues"
+  },
+  "homepage": "https://github.com/PMHStudio/serverManagerForJanggok#readme",
+  "dependencies": {
+    "chokidar": "^2.1.5",
+    "electron": "^4.1.4"
+  }
+}
