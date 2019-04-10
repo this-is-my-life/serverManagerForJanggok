@@ -1,0 +1,13 @@
+#result {
+  display: none;
+  height: 89vh;
+  resize: none;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
+
+.margin-left {
+  margin-left: 5px;
+}

@@ -1,6 +1,22 @@
 const electron = require('electron')
 const app = electron.app
 let mainWindow;
+const Menu = electron.Menu
+const menuTemplate = [
+  {
+    label: 'The Hidden Button',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
+        click (item, focusedWindow) {
+          focusedWindow ? focusedWindow.toggleDevTools() : null
+        }
+      }
+    ]
+  }
+]
+const menu = Menu.buildFromTemplate(menuTemplate)
 
 app.on('ready', () => {
   if (!mainWindow) {
@@ -22,10 +38,9 @@ app.on('window-all-closed', () => {
 
 function createMainWindow () {
   mainWindow = new electron.BrowserWindow({
-
+    autoHideMenuBar: true
   })
-  mainWindow.setMenu(null)
-  mainWindow.openDevTools()
+  mainWindow.setMenu(menu)
   mainWindow.loadFile('./src/index.html')
   mainWindow.on('close', () =>{
     mainWindow = null

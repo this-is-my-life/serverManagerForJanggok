@@ -1,17 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <title>Title</title>
+    <title>Server Manager 4 Janggok</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-      <div class="container">
-        <input type="text" class="form-control" id="folder" placeholder="여기에 스켄할 경로를 입력하세요"><button class="btn btn-primary" id="active" onclick="start()">시작</button><hr />
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light rounded-bottom">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" onclick="select()"><i class="fa fa-folder-open" aria-hidden="true"></i></button>
+              </span>
+              <input type="text" class="form-control" id="folder" placeholder="감시할 폴더경로 입력">
+            </div>
+            <div class="btn-group margin-left" role="toolbar">
+              <button class="btn btn-danger" id="stop" onclick="stop()" disabled><i class="fa fa-stop" aria-hidden="true"></i></button>
+              <button class="btn btn-success" id="start" onclick="start()"><i class="fa fa-play" aria-hidden="true"></i></button>
+            </div>
+        </nav>
         <textarea class="form-control" id="result" disabled></textarea>
       </div>
     <!-- Optional JavaScript -->
